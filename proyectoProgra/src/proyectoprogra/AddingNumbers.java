@@ -48,6 +48,7 @@ public class AddingNumbers
             if (ingresedNumber1 + secondRandom == outputSum) 
             {
                 correctSums++;
+                totalSums+= correctSums; 
                 //Modelo para la interfaz
                 JOptionPane.showMessageDialog( null, "Tiene "+correctSums+" sumas acertardas");
                 if (correctSums == 15)
@@ -57,8 +58,9 @@ public class AddingNumbers
             } else
             {
                 failedSums++;
+                totalSums+= failedSums;
                 JOptionPane.showMessageDialog( null, "Tiene "+failedSums+" sumas fallidas");
             }
-        }
-    }
-}
+        }//Fin while
+    }//Fin metodo calculateSum
+}//Fin metodo principal
