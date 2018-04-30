@@ -16,23 +16,22 @@ public class AddingNumbers
     
     public int addingTheFirstNumber ()
     {  
-        int number1=0, number2=0, sum=0;
+        int number1 = getRandomNumber();
         
-        return sum;
+        return number1;
     }
     
     public int addingTheSecondNumber()
     {    
-        int number1=0, number2=0, sum=0;
+        int number2 = getRandomNumber();
         
-        
-        return sum;
+        return number2;
     }
     
     //Método de la suma de los números aleatorios.
     public int calculateSum()
     {
-        int outputSum = getRandomNumber() + getRandomNumber();
+        int outputSum = addingTheFirstNumber() + addingTheSecondNumber();
         
         return outputSum;
     }
