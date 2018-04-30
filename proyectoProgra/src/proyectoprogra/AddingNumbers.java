@@ -29,4 +29,11 @@ public class AddingNumbers
         return sum;
     }
     
+    //Método de la suma de los números aleatorios.
+    public int calculateSum()
+    {
+        int outputSum = getRandomNumber() + getRandomNumber();
+        
+        return outputSum;
+    }
 }
