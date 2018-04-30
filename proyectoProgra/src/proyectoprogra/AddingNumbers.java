@@ -5,7 +5,7 @@ package proyectoprogra;
 public class AddingNumbers
 {
     private int correctSums;//Este contador contiene la cantidad de sumas corretcas
-    private boolean controlSums;//Este boolean controla que se cumplan las 15 sumas para que se termine el juego
+    private boolean controlSums= true;//Este boolean controla que se cumplan las 15 sumas para que se termine el juego
     private int totalSums;//Total de sumas realizadas
     private int failedSums;//Este contador lleva la cantidad de sumas incorrectas
     
@@ -29,10 +29,15 @@ public class AddingNumbers
     }
     
     //Método de la suma de los números aleatorios.
-    public int calculateSum()
+    public static void calculateSum(boolean controlSums,int addingTheFirstNumber,int addingTheSecondNumber)
     {
-        int outputSum = addingTheFirstNumber() + addingTheSecondNumber();
+        int outputSum = addingTheFirstNumber+ addingTheSecondNumber;
+        int number1;
         
-        return outputSum;
+        while(controlSums)
+        {
+            if ()
+        
+        }
     }
 }
