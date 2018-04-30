@@ -1,5 +1,7 @@
 package proyectoprogra;
 
+import javax.swing.JOptionPane;
+
 /*
  * @authors Yeiner, Jasson y Edwin.
  */
@@ -29,16 +31,28 @@ public class AddingNumbers {
     }
 
     //Método de la suma de los números aleatorios.
-    public static void calculateSum(boolean controlSums, int addingTheFirstNumber, int addingTheSecondNumber) {
+    public void calculateSum(boolean controlSums, int addingTheFirstNumber, int addingTheSecondNumber) {
         
         //Creación del objeto control, para llamar a los metodos adding.
         AddingNumbers control = new AddingNumbers();
-        int outputSum = control.addingTheFirstNumber() + control.addingTheSecondNumber();
+        int firstRandom = control.addingTheFirstNumber();
+        int secondRandom = control.addingTheSecondNumber();
+        int outputSum = firstRandom+secondRandom;
         int number1;
+        int ingresedNumber1;
 
-        while (controlSums) {
-            if () {
+        while (controlSums) 
+        {
+            ingresedNumber1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero"));
+            if (ingresedNumber1+secondRandom==outputSum) 
+            {
+                correctSums++;
                 
+                
+            }else
+            {
+                failedSums++;
+            
             }
         }
     }
