@@ -11,9 +11,6 @@ public class AddingNumbers
     private int totalSums;//Total de sumas realizadas.
     private int failedSums;//Este contador lleva la cantidad de sumas incorrectas.
 
-    //Creación del objeto control, para llamar a los metodos adding.
-    AddingNumbers control = new AddingNumbers();
-
     public int getRandomNumber()
     {
         return (int) (Math.random() * 8) + 1;//Determina numeros al azar.
@@ -35,8 +32,8 @@ public class AddingNumbers
     public void calculateSum()
     {
         //Almacenamiento de los números aleatorios en variables con llamadas a los métodos adding
-        int firstRandom = control.addingTheFirstNumber();
-        int secondRandom = control.addingTheSecondNumber();
+        int firstRandom = addingTheFirstNumber();
+        int secondRandom = addingTheSecondNumber();
         
         //Suma de de los números aleatorios.
         int outputSum = firstRandom + secondRandom;
