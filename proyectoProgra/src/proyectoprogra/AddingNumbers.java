@@ -41,6 +41,7 @@ public class AddingNumbers
         //Ciclo que calcula la cantidad de sumas acertadas y falladas.
         while (controlSums) 
         {
+            //FALTA CREAR DO/WHILE PARA GENERAR NÚMERO ALEATORIO.
             int ingresedNumber1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero"));
             if (ingresedNumber1 + secondRandom == outputSum) 
             {
