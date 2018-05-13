@@ -15,7 +15,7 @@ public class FormingWords
     
     public String findingWords()
     {
-        String ruta = "C:\\Users\\DELL15\\Documents\\NetBeansProjects\\proyecto\\palabras_para_el_juego.txt";
+        String ruta = "palabras_para_el_juego.txt";
         File file = new File(ruta);
         
         try
