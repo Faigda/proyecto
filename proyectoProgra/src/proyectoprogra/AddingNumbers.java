@@ -43,7 +43,7 @@ public class AddingNumbers
             //Suma de de los números aleatorios.
             int outputSum = firstRandom + secondRandom;
             
-            //FALTA CREAR DO/WHILE PARA GENERAR NÚMERO ALEATORIO.
+            //Do/while para verificar que se acertara la suma para generar nuevos números aleatorios.
             do{
             
                 int ingresedNumber1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero"));
@@ -64,7 +64,7 @@ public class AddingNumbers
                     totalSums+= failedSums;
                     JOptionPane.showMessageDialog( null, "Tiene "+failedSums+" sumas fallidas");
                 }
-            }while(controlRandomNumber!=false);
+            }while(controlRandomNumber!=false);//Fin do/while
         }//Fin while
     }//Fin metodo calculateSum
 }//Fin metodo principal
