@@ -12,6 +12,8 @@ public class FormingWords
     private String inputWord;
     private String changedWord;
     private String line;
+    private int initialScore = 100;
+    
     
     public String findingWords()
     {
@@ -33,6 +35,25 @@ public class FormingWords
             e.printStackTrace();
         }
         return line;
+    }
+    
+    public void startGame ( String inputWord )
+    {
+        String copy = findingWords();
+        changedWord = "";
+        
+        //Desordena la palabra a mostrar por pantalla.
+        for ( int i = copy.length(); i >= 2; i-- )
+        {
+            int valorAleatorio = (int)(Math.random()* i+1);
+            changedWord = changedWord + copy.substring( valorAleatorio - 1, valorAleatorio );
+            copy =  copy.substring( 0, valorAleatorio -1 ) + copy.substring( valorAleatorio, i );
+        }
+        
+        if ( !( inputWord.equals(line) ) )
+        {
+            initialScore -=10;
+        }
     }
     
     //Métodos get and set
