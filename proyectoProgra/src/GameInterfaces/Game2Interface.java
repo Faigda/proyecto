@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoprogra;
+package GameInterfaces;
 
 /**
  *
@@ -44,7 +44,6 @@ public class Game2Interface extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextPane3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         name.setBackground(new java.awt.Color(0, 0, 51));
         name.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
