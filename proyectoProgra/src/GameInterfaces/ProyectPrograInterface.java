@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GameInterfaces;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Jasson, Yeiner y Edwin.
  */
+import GameInterfaces.Game2Interface;
+import GameInterfaces.AddingNumbersInterface;
+import javax.swing.JFrame;
+
 public class ProyectPrograInterface extends javax.swing.JFrame {
 
     /**
@@ -123,15 +122,25 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        AddingNumbersInterface squareObject = new AddingNumbersInterface();
+        
+        squareObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        squareObject.setSize(404, 326); 
+        squareObject.setVisible(true); 
+        squareObject.setLocationRelativeTo(null); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Game2Interface circleObject = new Game2Interface();
+        
+        circleObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        circleObject.setSize(404, 326); 
+        circleObject.setVisible(true); 
+        circleObject.setLocationRelativeTo(null); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
