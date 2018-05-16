@@ -31,15 +31,14 @@ public class Game2Interface extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
         name = new javax.swing.JLabel();
-        espacioPalabra = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         corregir = new javax.swing.JButton();
         solucionar = new javax.swing.JButton();
         ayuda = new javax.swing.JButton();
         terminarJuego = new javax.swing.JButton();
         puntaje = new javax.swing.JTextField();
-        puntajeNumero = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        ingresedWord = new javax.swing.JTextField();
+        randomWord = new javax.swing.JLabel();
+        numScore = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jTextPane3);
 
@@ -49,12 +48,6 @@ public class Game2Interface extends javax.swing.JFrame {
         name.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         name.setForeground(new java.awt.Color(0, 0, 0));
         name.setText("Formando Palabras");
-
-        espacioPalabra.setBackground(new java.awt.Color(0, 0, 0));
-
-        jTextPane1.setBackground(new java.awt.Color(0, 51, 51));
-        jTextPane1.setForeground(new java.awt.Color(255, 255, 255));
-        espacioPalabra.setViewportView(jTextPane1);
 
         corregir.setBackground(new java.awt.Color(0, 153, 153));
         corregir.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -91,9 +84,7 @@ public class Game2Interface extends javax.swing.JFrame {
         puntaje.setForeground(new java.awt.Color(0, 0, 0));
         puntaje.setText("Puntaje:");
 
-        jTextPane2.setBackground(new java.awt.Color(0, 51, 51));
-        jTextPane2.setForeground(new java.awt.Color(0, 51, 51));
-        puntajeNumero.setViewportView(jTextPane2);
+        ingresedWord.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,23 +94,26 @@ public class Game2Interface extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ayuda)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(terminarJuego))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ayuda)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(terminarJuego))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(corregir)
+                                .addGap(68, 68, 68)
+                                .addComponent(solucionar)
+                                .addGap(0, 143, Short.MAX_VALUE)))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(corregir)
-                        .addGap(68, 68, 68)
-                        .addComponent(solucionar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 15, Short.MAX_VALUE)
-                .addComponent(espacioPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(puntajeNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(randomWord, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ingresedWord, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(numScore)
+                        .addGap(11, 11, 11))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(name)
@@ -130,12 +124,14 @@ public class Game2Interface extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(espacioPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(randomWord, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(puntajeNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                    .addComponent(ingresedWord, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numScore))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(corregir)
                     .addComponent(solucionar))
@@ -150,7 +146,7 @@ public class Game2Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void terminarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminarJuegoActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_terminarJuegoActionPerformed
 
     private void solucionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solucionarActionPerformed
@@ -195,14 +191,13 @@ public class Game2Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ayuda;
     private javax.swing.JButton corregir;
-    private javax.swing.JScrollPane espacioPalabra;
+    private javax.swing.JTextField ingresedWord;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JLabel name;
+    private javax.swing.JLabel numScore;
     private javax.swing.JTextField puntaje;
-    private javax.swing.JScrollPane puntajeNumero;
+    private javax.swing.JLabel randomWord;
     private javax.swing.JButton solucionar;
     private javax.swing.JButton terminarJuego;
     // End of variables declaration//GEN-END:variables
