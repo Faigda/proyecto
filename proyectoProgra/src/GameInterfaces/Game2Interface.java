@@ -5,6 +5,8 @@
  */
 package GameInterfaces;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author yeine
@@ -150,7 +152,7 @@ public class Game2Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void terminarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminarJuegoActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_terminarJuegoActionPerformed
 
     private void solucionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solucionarActionPerformed

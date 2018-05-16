@@ -2,6 +2,7 @@ package GameInterfaces;
 /*
  * @author Koriel
  */
+import javax.swing.JFrame;
 import proyectoprogra.AddingNumbers;
 public class AddingNumbersInterface extends javax.swing.JFrame {
     /*
@@ -189,11 +190,10 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_botonOtraVezActionPerformed
 
     private void botonTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerminarActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_botonTerminarActionPerformed
 
     private void botonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_botonAyudaActionPerformed
 
     /**
