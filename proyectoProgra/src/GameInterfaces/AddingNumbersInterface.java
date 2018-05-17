@@ -1,19 +1,21 @@
-package GameInterfaces;
 /*
- * @author Koriel
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-import javax.swing.JFrame;
-import proyectoprogra.AddingNumbers;
+package GameInterfaces;
+
+/**
+ *
+ * @author yeine
+ */
 public class AddingNumbersInterface extends javax.swing.JFrame {
-    /*
+
+    /**
      * Creates new form AddingNumbersInterface
      */
-    
-    AddingNumbers start = new AddingNumbers();
-    
     public AddingNumbersInterface() {
         initComponents();
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -25,176 +27,174 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titulo = new javax.swing.JLabel();
-        botonOtraVez = new javax.swing.JButton();
-        botonTerminar = new javax.swing.JButton();
-        botonAyuda = new javax.swing.JButton();
-        etiquetaAciertos = new javax.swing.JLabel();
-        cuadroAciertos = new javax.swing.JScrollPane();
-        espacioAciertos = new javax.swing.JTextPane();
-        etiquetaFallos = new javax.swing.JLabel();
-        cuadroFallos = new javax.swing.JScrollPane();
-        espacioFallos = new javax.swing.JTextPane();
-        etiquetaTotal = new javax.swing.JLabel();
-        cuadroTotal = new javax.swing.JScrollPane();
-        espacioTotal = new javax.swing.JTextPane();
-        cuadroPrimerAleatorio = new javax.swing.JScrollPane();
-        espacioPrimerAleatorio = new javax.swing.JTextPane();
-        simboloMas = new javax.swing.JLabel();
-        cuadroSegundoAleatorio = new javax.swing.JScrollPane();
-        espacioSegundoAleatorio = new javax.swing.JTextPane();
-        signoIgual = new javax.swing.JLabel();
-        cuadroResultado = new javax.swing.JScrollPane();
-        espacioResultado = new javax.swing.JTextPane();
+        jPanel1 = new javax.swing.JPanel();
+        AddingNumbers = new javax.swing.JLabel();
+        tryAgain = new javax.swing.JButton();
+        firstNumber = new javax.swing.JLabel();
+        sign = new javax.swing.JLabel();
+        secondNumber = new javax.swing.JLabel();
+        sign2 = new javax.swing.JLabel();
+        result = new javax.swing.JTextField();
+        acertedSums = new javax.swing.JLabel();
+        failedSums = new javax.swing.JLabel();
+        totalSums = new javax.swing.JLabel();
+        help = new javax.swing.JButton();
+        solution = new javax.swing.JButton();
+        finishGame = new javax.swing.JButton();
+        sumsNumber = new javax.swing.JLabel();
+        failedSumsNumber = new javax.swing.JLabel();
+        totalSumsNumber = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setLocation(new java.awt.Point(50, 90));
-        setUndecorated(true);
 
-        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Sumando números");
+        AddingNumbers.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        AddingNumbers.setText("Sumando Números");
 
-        botonOtraVez.setText("Otra vez");
-        botonOtraVez.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonOtraVezActionPerformed(evt);
-            }
-        });
+        tryAgain.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        tryAgain.setText("Otra vez");
 
-        botonTerminar.setText("Terminar juego");
-        botonTerminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonTerminarActionPerformed(evt);
-            }
-        });
+        firstNumber.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        firstNumber.setText("jLabel1");
 
-        botonAyuda.setText("Ayuda");
-        botonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAyudaActionPerformed(evt);
-            }
-        });
+        sign.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        sign.setText("+");
 
-        etiquetaAciertos.setText("Sumas acertadas");
+        secondNumber.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        secondNumber.setText("jLabel1");
 
-        cuadroAciertos.setViewportView(espacioAciertos);
+        sign2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        sign2.setText("=");
 
-        etiquetaFallos.setText("Sumas falladas");
+        result.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        result.setText("jTextField1");
 
-        cuadroFallos.setViewportView(espacioFallos);
+        acertedSums.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        acertedSums.setText("Sumas acertadas");
 
-        etiquetaTotal.setText("Total de sumas ");
+        failedSums.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        failedSums.setText("Sumas no acertadas");
 
-        cuadroTotal.setViewportView(espacioTotal);
+        totalSums.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        totalSums.setText("Total de sumas realizadas");
 
-        cuadroPrimerAleatorio.setViewportView(espacioPrimerAleatorio);
+        help.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        help.setText("Ayuda");
 
-        simboloMas.setText("+");
+        solution.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        solution.setText("Solucionar");
 
-        cuadroSegundoAleatorio.setViewportView(espacioSegundoAleatorio);
+        finishGame.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        finishGame.setText("Terminar Juego");
 
-        signoIgual.setText("=");
+        sumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        sumsNumber.setText("jLabel1");
 
-        cuadroResultado.setViewportView(espacioResultado);
+        failedSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        failedSumsNumber.setText("jLabel1");
+
+        totalSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        totalSumsNumber.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(firstNumber)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sign)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(secondNumber)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sign2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(acertedSums)
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(totalSums)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(sumsNumber)
+                                        .addGap(39, 39, 39)
+                                        .addComponent(failedSums)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(failedSumsNumber)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tryAgain)
+                                .addGap(80, 80, 80))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(solution)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(help)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(finishGame)
+                        .addGap(71, 71, 71))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AddingNumbers))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(totalSumsNumber)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddingNumbers)
+                    .addComponent(tryAgain))
+                .addGap(59, 59, 59)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sign)
+                    .addComponent(secondNumber)
+                    .addComponent(sign2)
+                    .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(solution))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(acertedSums)
+                    .addComponent(failedSums)
+                    .addComponent(sumsNumber)
+                    .addComponent(failedSumsNumber))
+                .addGap(33, 33, 33)
+                .addComponent(totalSums)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalSumsNumber)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(help)
+                    .addComponent(finishGame))
+                .addGap(31, 31, 31))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(botonOtraVez)
-                                .addGap(18, 18, 18))
-                            .addComponent(etiquetaAciertos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(botonTerminar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(etiquetaTotal)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cuadroTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(titulo))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(cuadroAciertos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(cuadroPrimerAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(simboloMas)
-                        .addGap(18, 18, 18)
-                        .addComponent(cuadroSegundoAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(signoIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cuadroResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(etiquetaFallos)
-                                .addGap(18, 18, 18)
-                                .addComponent(cuadroFallos, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titulo)
-                    .addComponent(botonAyuda))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cuadroResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(signoIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(simboloMas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cuadroPrimerAleatorio, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(cuadroSegundoAleatorio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cuadroAciertos, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(etiquetaFallos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cuadroFallos)
-                    .addComponent(etiquetaAciertos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(etiquetaTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cuadroTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonTerminar)
-                    .addComponent(botonOtraVez))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonOtraVezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOtraVezActionPerformed
-        start.calculateSum();
-    }//GEN-LAST:event_botonOtraVezActionPerformed
-
-    private void botonTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerminarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_botonTerminarActionPerformed
-
-    private void botonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaActionPerformed
-    }//GEN-LAST:event_botonAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,26 +232,22 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAyuda;
-    private javax.swing.JButton botonOtraVez;
-    private javax.swing.JButton botonTerminar;
-    private javax.swing.JScrollPane cuadroAciertos;
-    private javax.swing.JScrollPane cuadroFallos;
-    private javax.swing.JScrollPane cuadroPrimerAleatorio;
-    private javax.swing.JScrollPane cuadroResultado;
-    private javax.swing.JScrollPane cuadroSegundoAleatorio;
-    private javax.swing.JScrollPane cuadroTotal;
-    private javax.swing.JTextPane espacioAciertos;
-    private javax.swing.JTextPane espacioFallos;
-    private javax.swing.JTextPane espacioPrimerAleatorio;
-    private javax.swing.JTextPane espacioResultado;
-    private javax.swing.JTextPane espacioSegundoAleatorio;
-    private javax.swing.JTextPane espacioTotal;
-    private javax.swing.JLabel etiquetaAciertos;
-    private javax.swing.JLabel etiquetaFallos;
-    private javax.swing.JLabel etiquetaTotal;
-    private javax.swing.JLabel signoIgual;
-    private javax.swing.JLabel simboloMas;
-    private javax.swing.JLabel titulo;
+    private javax.swing.JLabel AddingNumbers;
+    private javax.swing.JLabel acertedSums;
+    private javax.swing.JLabel failedSums;
+    private javax.swing.JLabel failedSumsNumber;
+    private javax.swing.JButton finishGame;
+    private javax.swing.JLabel firstNumber;
+    private javax.swing.JButton help;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField result;
+    private javax.swing.JLabel secondNumber;
+    private javax.swing.JLabel sign;
+    private javax.swing.JLabel sign2;
+    private javax.swing.JButton solution;
+    private javax.swing.JLabel sumsNumber;
+    private javax.swing.JLabel totalSums;
+    private javax.swing.JLabel totalSumsNumber;
+    private javax.swing.JButton tryAgain;
     // End of variables declaration//GEN-END:variables
 }
