@@ -28,67 +28,67 @@ public class Game2Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        formingWords = new javax.swing.JLabel();
+        randomWords = new javax.swing.JLabel();
+        ingresedWord = new javax.swing.JTextField();
+        toCorrectButton = new javax.swing.JButton();
+        solveButton2 = new javax.swing.JButton();
+        playerPoints = new javax.swing.JLabel();
+        playerPointsNumber = new javax.swing.JLabel();
+        helpButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        endGameButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setText("Formando Palabras");
+        formingWords.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        formingWords.setText("Formando Palabras");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel2.setText("jLabel2");
+        randomWords.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        randomWords.setText("jLabel2");
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ingresedWord.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        ingresedWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                ingresedWordActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Corregir");
+        toCorrectButton.setBackground(new java.awt.Color(0, 153, 153));
+        toCorrectButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        toCorrectButton.setForeground(new java.awt.Color(0, 0, 0));
+        toCorrectButton.setText("Corregir");
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Solucionar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        solveButton2.setBackground(new java.awt.Color(0, 153, 153));
+        solveButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        solveButton2.setForeground(new java.awt.Color(0, 0, 0));
+        solveButton2.setText("Solucionar");
+        solveButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                solveButton2ActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setText("Puntaje:");
+        playerPoints.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        playerPoints.setText("Puntaje:");
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setText("jLabel4");
+        playerPointsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        playerPointsNumber.setText("jLabel4");
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 153));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Ayuda");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        helpButton3.setBackground(new java.awt.Color(0, 153, 153));
+        helpButton3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        helpButton3.setForeground(new java.awt.Color(0, 0, 0));
+        helpButton3.setText("Ayuda");
+        helpButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                helpButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 153, 153));
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Terminar Juego");
+        endGameButton2.setBackground(new java.awt.Color(0, 153, 153));
+        endGameButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        endGameButton2.setForeground(new java.awt.Color(0, 0, 0));
+        endGameButton2.setText("Terminar Juego");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,49 +100,49 @@ public class Game2Interface extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                .addComponent(jTextField1))
-                            .addComponent(jButton3)
+                                .addComponent(randomWords, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                .addComponent(ingresedWord))
+                            .addComponent(helpButton3)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(playerPoints)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel4)))
+                                .addComponent(playerPointsNumber)))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5)
-                            .addComponent(jButton4)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(endGameButton2)
+                            .addComponent(solveButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(toCorrectButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(61, 61, 61))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(formingWords)
                         .addGap(128, 128, 128))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(formingWords)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(randomWords, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ingresedWord, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                            .addComponent(playerPoints)
+                            .addComponent(playerPointsNumber))
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
+                            .addComponent(helpButton3)
                             .addComponent(jLabel5)
-                            .addComponent(jButton4))
+                            .addComponent(endGameButton2))
                         .addGap(27, 27, 27))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jButton1)
+                        .addComponent(toCorrectButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(solveButton2)
                         .addContainerGap(133, Short.MAX_VALUE))))
         );
 
@@ -160,17 +160,17 @@ public class Game2Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void ingresedWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresedWordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_ingresedWordActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void helpButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_helpButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void solveButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_solveButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,16 +208,16 @@ public class Game2Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton endGameButton2;
+    private javax.swing.JLabel formingWords;
+    private javax.swing.JButton helpButton3;
+    private javax.swing.JTextField ingresedWord;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel playerPoints;
+    private javax.swing.JLabel playerPointsNumber;
+    private javax.swing.JLabel randomWords;
+    private javax.swing.JButton solveButton2;
+    private javax.swing.JButton toCorrectButton;
     // End of variables declaration//GEN-END:variables
 }
