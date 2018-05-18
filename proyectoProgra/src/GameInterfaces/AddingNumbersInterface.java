@@ -39,7 +39,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         failedSums = new javax.swing.JLabel();
         totalSums = new javax.swing.JLabel();
         helpButton2 = new javax.swing.JButton();
-        solutionButton = new javax.swing.JButton();
+        solveButton = new javax.swing.JButton();
         endGameButton1 = new javax.swing.JButton();
         acertedSumsNumber = new javax.swing.JLabel();
         failedSumsNumber = new javax.swing.JLabel();
@@ -88,10 +88,10 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         helpButton2.setForeground(new java.awt.Color(0, 0, 0));
         helpButton2.setText("Ayuda");
 
-        solutionButton.setBackground(new java.awt.Color(0, 153, 153));
-        solutionButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        solutionButton.setForeground(new java.awt.Color(0, 0, 0));
-        solutionButton.setText("Solucionar");
+        solveButton.setBackground(new java.awt.Color(0, 153, 153));
+        solveButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        solveButton.setForeground(new java.awt.Color(0, 0, 0));
+        solveButton.setText("Solucionar");
 
         endGameButton1.setBackground(new java.awt.Color(0, 153, 153));
         endGameButton1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -149,7 +149,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
                                         .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(solutionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(solveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tryAgainButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(231, 231, 231)
@@ -184,7 +184,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
                         .addGap(92, 92, 92)
                         .addComponent(tryAgainButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(solutionButton)))
+                        .addComponent(solveButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(helpButton2)
@@ -259,7 +259,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     private javax.swing.JLabel secondNumber;
     private javax.swing.JLabel sign;
     private javax.swing.JLabel sign2;
-    private javax.swing.JButton solutionButton;
+    private javax.swing.JButton solveButton;
     private javax.swing.JLabel totalSums;
     private javax.swing.JLabel totalSumsNumber;
     private javax.swing.JButton tryAgainButton;
