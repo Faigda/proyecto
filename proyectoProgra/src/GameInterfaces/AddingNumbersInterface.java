@@ -5,15 +5,22 @@
  */
 package GameInterfaces;
 
+import javax.swing.JFrame;
+import proyectoprogra.AddingNumbers;
+
 /**
  *
  * @author yeine
  */
 public class AddingNumbersInterface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AddingNumbersInterface
-     */
+    private int firstRandom = (int) (Math.random() * 8) + 1;
+    private int secondRandom = (int) (Math.random() * 8) + 1; 
+    private int outPutSum = firstRandom + secondRandom;
+    private int incoming;
+    
+    AddingNumbers start = new AddingNumbers(0, 0, 0, firstRandom, secondRandom, outPutSum);
+    
     public AddingNumbersInterface() {
         initComponents();
     }
@@ -52,7 +59,6 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
 
         tryAgainButton.setBackground(new java.awt.Color(0, 153, 153));
         tryAgainButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        tryAgainButton.setForeground(new java.awt.Color(0, 0, 0));
         tryAgainButton.setText("Again");
         tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,18 +67,23 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         });
 
         firstNumber.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        firstNumber.setText("jLabel1");
+        firstNumber.setText(String.valueOf(firstRandom));
 
         sign.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sign.setText("+");
 
         secondNumber.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        secondNumber.setText("jLabel1");
+        secondNumber.setText(String.valueOf(secondRandom));
 
         sign2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sign2.setText("=");
 
         result.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        result.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultActionPerformed(evt);
+            }
+        });
 
         acertedSums.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         acertedSums.setText("Successful sums");
@@ -85,27 +96,34 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
 
         helpButton2.setBackground(new java.awt.Color(0, 153, 153));
         helpButton2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        helpButton2.setForeground(new java.awt.Color(0, 0, 0));
         helpButton2.setText("Help");
 
         solveButton.setBackground(new java.awt.Color(0, 153, 153));
         solveButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        solveButton.setForeground(new java.awt.Color(0, 0, 0));
         solveButton.setText("Solve");
+        solveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                solveButtonActionPerformed(evt);
+            }
+        });
 
         endGameButton1.setBackground(new java.awt.Color(0, 153, 153));
         endGameButton1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        endGameButton1.setForeground(new java.awt.Color(0, 0, 0));
         endGameButton1.setText("End Game");
+        endGameButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endGameButton1ActionPerformed(evt);
+            }
+        });
 
         acertedSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        acertedSumsNumber.setText("jLabel1");
+        acertedSumsNumber.setText(String.valueOf(start.getCorrectSums()));
 
         failedSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        failedSumsNumber.setText("jLabel1");
+        failedSumsNumber.setText(String.valueOf(start.getFailedSums()));
 
         totalSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        totalSumsNumber.setText("jLabel1");
+        totalSumsNumber.setText(String.valueOf(start.getTotalSums()));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,7 +174,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(totalSumsNumber)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,8 +227,53 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tryAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tryAgainButtonActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        AddingNumbersInterface squareObject = new AddingNumbersInterface();
+        
+        squareObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        squareObject.setVisible(true); 
+        squareObject.setLocationRelativeTo(null);
     }//GEN-LAST:event_tryAgainButtonActionPerformed
+
+    private void endGameButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endGameButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_endGameButton1ActionPerformed
+
+    private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
+        incoming = Integer.parseInt(result.getText());
+    }//GEN-LAST:event_resultActionPerformed
+
+    private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
+        incoming = Integer.parseInt(result.getText());
+        start.setIngresedNumber(incoming);
+        
+        if (start.calculateSum())
+        {
+            start.addCorrectSums(1);
+            start.addTotalSums(1);
+        }
+        else
+        {
+            start.addFailedSums(1);
+            start.addTotalSums(1);
+        }
+        
+        firstRandom = (int) (Math.random() * 9) + 1;
+        secondRandom = (int) (Math.random() * 9) + 1;
+    
+        outPutSum = firstRandom + secondRandom;
+        start.setOutPutSum(outPutSum);
+        
+        firstNumber.setText(String.valueOf(firstRandom));
+        secondNumber.setText(String.valueOf(secondRandom));
+        
+        acertedSumsNumber.setText(String.valueOf(start.getCorrectSums()));
+        failedSumsNumber.setText(String.valueOf(start.getFailedSums()));
+        
+        totalSumsNumber.setText(String.valueOf(start.getTotalSums()));
+        
+        result.setText("");
+    }//GEN-LAST:event_solveButtonActionPerformed
 
     /**
      * @param args the command line arguments

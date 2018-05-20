@@ -1,17 +1,65 @@
 package proyectoprogra;
 
-import javax.swing.JOptionPane;
+import GameInterfaces.AddingNumbersInterface;
+
 /*
  * @authors Yeiner, Jasson y Edwin.
  */
 public class AddingNumbers
 {
-    private int correctSums;//Este contador contiene la cantidad de sumas corretcas.
-    private boolean controlSums = true;//Este boolean controla que se cumplan las 15 sumas para que se termine el juego.
-    private int totalSums;//Total de sumas realizadas.
-    private int failedSums;//Este contador lleva la cantidad de sumas incorrectas.
-    private boolean controlRandomNumber = true;
+    protected int correctSums;
+    protected int totalSums;
+    protected int failedSums;
+    protected int firstRandom;
+    protected int secondRandom;
+    private int ingresedNumber;
+    private int outPutSum;
+       
+    public AddingNumbers(int correctSums, int totalSums, int failedSums, int firstRandom, int secondRandom, int outPutSum) {
+        this.correctSums = correctSums;
+        this.totalSums = totalSums;
+        this.failedSums = failedSums;
+        this.firstRandom = firstRandom;
+        this.secondRandom = secondRandom;
+        this.outPutSum = outPutSum;
+    }
+
+    public int getOutPutSum() {
+        return outPutSum;
+    }
+
+    public void setOutPutSum(int outPutSum) {
+        this.outPutSum = outPutSum;
+    }
     
+    //Método de la suma de los números aleatorios.
+    public boolean calculateSum()
+    {
+        boolean output = false;
+            //Suma de de los números aleatorios.
+            int outputSum = getOutPutSum() ;
+            
+            if (ingresedNumber == outputSum) 
+            {
+                output = true;
+            } 
+            return output;
+    }//Fin metodo calculateSum    
+
+    public void addFailedSums( int parameter )
+    {
+        this.failedSums += parameter;
+    }
+    
+    public void addCorrectSums( int parameter )
+    {
+        this.correctSums += parameter;
+    }
+    
+    public void addTotalSums( int parameter )
+    {
+        this.totalSums += parameter;
+    }
     public int getRandomNumber()
     {
         return (int) (Math.random() * 8) + 1;//Determina numeros al azar.
@@ -28,43 +76,32 @@ public class AddingNumbers
     {
         return getRandomNumber();
     }
+    
+    public int getCorrectSums() {
+        return correctSums;
+    }
 
-    //Método de la suma de los números aleatorios.
-    public void calculateSum()
-    {
-        
-        //Ciclo que calcula la cantidad de sumas acertadas y falladas.
-        while (controlSums) 
-        {   
-            //Almacenamiento de los números aleatorios en variables con llamadas a los métodos adding
-            int firstRandom = addingTheFirstNumber();
-            int secondRandom = addingTheSecondNumber();
-        
-            //Suma de de los números aleatorios.
-            int outputSum = firstRandom + secondRandom;
-            
-            //Do/while para verificar que se acertara la suma para generar nuevos números aleatorios.
-            do{
-            
-                int ingresedNumber1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero"));
-                if (ingresedNumber1 + secondRandom == outputSum) 
-                {
-                    controlRandomNumber=false;
-                    correctSums++;
-                    totalSums+= correctSums; 
-                    //Modelo para la interfaz
-                    JOptionPane.showMessageDialog( null, "Tiene "+correctSums+" sumas acertardas");
-                    if (correctSums == 15)
-                    {
-                    controlSums = false;
-                    }
-                } else
-                {
-                    failedSums++;
-                    totalSums+= failedSums;
-                    JOptionPane.showMessageDialog( null, "Tiene "+failedSums+" sumas fallidas");
-                }
-            }while(controlRandomNumber!=false);//Fin do/while
-        }//Fin while
-    }//Fin metodo calculateSum
+    public int getTotalSums() {
+        return totalSums;
+    }
+
+    public int getFailedSums() {
+        return failedSums;
+    }
+
+    public int getFirstRandom() {
+        return firstRandom;
+    }
+
+    public int getSecondRandom() {
+        return secondRandom;
+    }
+    
+    public int getIngresedNumber() {
+        return ingresedNumber;
+    }
+
+    public void setIngresedNumber(int ingresedNumber) {
+        this.ingresedNumber = ingresedNumber;
+    }
 }//Fin metodo principal
