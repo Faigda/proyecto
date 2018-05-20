@@ -133,11 +133,20 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addingNumbersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addingNumbersButtonActionPerformed
-        // TODO add your handling code here:
+        AddingNumbersInterface squareObject = new AddingNumbersInterface();
+        squareObject.setSize(404, 326);
+        squareObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        squareObject.setVisible(true); 
+        squareObject.setLocationRelativeTo(null);
     }//GEN-LAST:event_addingNumbersButtonActionPerformed
 
     private void formingWordsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formingWordsButtonActionPerformed
-        // TODO add your handling code here:
+        Game2Interface circleObject = new Game2Interface();
+        
+        circleObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        circleObject.setSize(494, 307); 
+        circleObject.setVisible(true); 
+        circleObject.setLocationRelativeTo(null);
     }//GEN-LAST:event_formingWordsButtonActionPerformed
 
     private void helpButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton1ActionPerformed
@@ -145,7 +154,7 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_helpButton1ActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     /**

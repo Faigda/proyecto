@@ -17,15 +17,15 @@ public class FormingWords
     
     public String findingWords()
     {
-        String ruta = "palabras_para_el_juego.txt";
+        String ruta = "C:\\Users\\DELL15\\Documents\\NetBeansProjects\\proyecto\\palabras_para_el_juego.txt";
         File file = new File(ruta);
+        String line = "";
         
         try
         {
             if ( !file.exists() )
                 file.createNewFile();
             
-            String line = "";
             FileReader fileR = new FileReader(file);
             BufferedReader buffReader = new BufferedReader(fileR);
             
@@ -36,8 +36,17 @@ public class FormingWords
         }
         return line;
     }
-    
-    public void startGame ( String inputWord )
+
+    public int getInitialScore() {
+        return initialScore;
+    }
+
+    public void setInitialScore(int initialScore) {
+        this.initialScore = initialScore;
+    }
+    //No es necesario que el método reciba por parámetro la palabra digitada por el usuario.
+    //Hay que cambiar la manera en que se obtiene la palabra digitada por el usuario.
+    public String startGame ()
     {
         String copy = findingWords();
         changedWord = "";
@@ -49,13 +58,17 @@ public class FormingWords
             changedWord = changedWord + copy.substring( valorAleatorio - 1, valorAleatorio );
             copy =  copy.substring( 0, valorAleatorio -1 ) + copy.substring( valorAleatorio, i );
         }
-        
+        return changedWord;
+    }
+    
+    public int compareWords ()
+    {
         if ( !( inputWord.equals(line) ) )
         {
             initialScore -=10;
         }
+        return initialScore;
     }
-    
     //Métodos get and set
     public String getInputWord() {
         return inputWord;
