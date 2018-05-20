@@ -38,12 +38,12 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
 
         proyectTitle.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         proyectTitle.setForeground(new java.awt.Color(0, 0, 0));
-        proyectTitle.setText("Proyecto de IF2000");
+        proyectTitle.setText("IF2000 Proyect");
 
         addingNumbersButton.setBackground(new java.awt.Color(0, 153, 153));
         addingNumbersButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         addingNumbersButton.setForeground(new java.awt.Color(0, 0, 0));
-        addingNumbersButton.setText("Sumando Números");
+        addingNumbersButton.setText("Adding Numbers");
         addingNumbersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addingNumbersButtonActionPerformed(evt);
@@ -53,7 +53,7 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
         formingWordsButton.setBackground(new java.awt.Color(0, 153, 153));
         formingWordsButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         formingWordsButton.setForeground(new java.awt.Color(51, 51, 51));
-        formingWordsButton.setText("Formando Palabras");
+        formingWordsButton.setText("Forming Words");
         formingWordsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 formingWordsButtonActionPerformed(evt);
@@ -63,7 +63,7 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
         helpButton1.setBackground(new java.awt.Color(0, 153, 153));
         helpButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         helpButton1.setForeground(new java.awt.Color(0, 0, 0));
-        helpButton1.setText("Ayuda");
+        helpButton1.setText("Help");
         helpButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpButton1ActionPerformed(evt);
@@ -73,7 +73,7 @@ public class ProyectPrograInterface extends javax.swing.JFrame {
         exitButton.setBackground(new java.awt.Color(0, 153, 153));
         exitButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         exitButton.setForeground(new java.awt.Color(0, 0, 0));
-        exitButton.setText("Salir");
+        exitButton.setText("Exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
