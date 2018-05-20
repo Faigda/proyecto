@@ -17,7 +17,7 @@ public class FormingWords
     
     public String findingWords()
     {
-        String ruta = "C:\\Users\\DELL15\\Documents\\NetBeansProjects\\proyecto\\palabras_para_el_juego.txt";
+        String ruta = "E:\\palabras_para_el_juego.txt";
         File file = new File(ruta);
         String line = "";
         
@@ -52,7 +52,7 @@ public class FormingWords
         changedWord = "";
         
         //Desordena la palabra a mostrar por pantalla.
-        for ( int i = copy.length(); i >= 2; i-- )
+        for ( int i = copy.length(); i >= 1; i-- )
         {
             int valorAleatorio = (int)(Math.random()* i+1);
             changedWord = changedWord + copy.substring( valorAleatorio - 1, valorAleatorio );

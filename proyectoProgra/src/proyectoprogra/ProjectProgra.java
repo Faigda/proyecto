@@ -3,14 +3,14 @@ package proyectoprogra;
 /*
  * @author Jasson, Yeiner y Edwin.
  */
-import GameInterfaces.ProyectPrograInterface;
+import GameInterfaces.ProjectPrograInterface;
 import javax.swing.JFrame;
 
-public class ProyectoProgra 
+public class ProjectProgra 
 {
     public static void main(String[] args)
     {
-        ProyectPrograInterface startObject = new ProyectPrograInterface(); // crea objeto ProyectPrograInterface
+        ProjectPrograInterface startObject = new ProjectPrograInterface(); // crea objeto ProyectPrograInterface
         
         startObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startObject.setSize(404, 326); // establece el tamaño del marco
