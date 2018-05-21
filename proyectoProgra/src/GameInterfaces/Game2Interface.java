@@ -24,7 +24,6 @@ public class Game2Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        formingWords = new javax.swing.JLabel();
         randomWords = new javax.swing.JLabel();
         toCorrectButton = new javax.swing.JButton();
         solveButton2 = new javax.swing.JButton();
@@ -36,9 +35,6 @@ public class Game2Interface extends javax.swing.JFrame {
         InputSpace = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        formingWords.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        formingWords.setText("Forming Words");
 
         randomWords.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         randomWords.setText(cWord);
@@ -85,6 +81,7 @@ public class Game2Interface extends javax.swing.JFrame {
             }
         });
 
+        InputSpace.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         InputSpace.setText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -108,37 +105,30 @@ public class Game2Interface extends javax.swing.JFrame {
                     .addComponent(solveButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(toCorrectButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(61, 61, 61))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(formingWords)
-                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(formingWords)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(toCorrectButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(solveButton2)
-                        .addContainerGap(133, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(randomWords, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(InputSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(playerPoints)
-                            .addComponent(playerPointsNumber))
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(helpButton3)
-                            .addComponent(jLabel5)
-                            .addComponent(endGameButton2))
-                        .addGap(27, 27, 27))))
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(toCorrectButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(solveButton2)
+                .addContainerGap(133, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(randomWords, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(InputSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playerPoints)
+                    .addComponent(playerPointsNumber))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(helpButton3)
+                    .addComponent(jLabel5)
+                    .addComponent(endGameButton2))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,6 +170,11 @@ public class Game2Interface extends javax.swing.JFrame {
         {
             initialScore -= 10;
             playerPointsNumber.setText(String.valueOf(initialScore));
+            if(initialScore==0)
+            {
+                this.dispose();
+                JOptionPane.showMessageDialog(null, "¡Perdiste!");
+            }
         } 
       
         InputSpace.setText("");
@@ -237,7 +232,6 @@ public class Game2Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField InputSpace;
     private javax.swing.JButton endGameButton2;
-    private javax.swing.JLabel formingWords;
     private javax.swing.JButton helpButton3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

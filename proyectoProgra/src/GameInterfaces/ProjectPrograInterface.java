@@ -27,16 +27,12 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        proyectTitle = new javax.swing.JLabel();
         addingNumbersButton = new javax.swing.JButton();
         formingWordsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
-
-        proyectTitle.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        proyectTitle.setText("IF2000 Project");
 
         addingNumbersButton.setBackground(new java.awt.Color(0, 153, 153));
         addingNumbersButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -69,34 +65,27 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(addingNumbersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(formingWordsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(proyectTitle)
-                        .addGap(108, 108, 108))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(159, 159, 159))))
+                .addGap(32, 32, 32))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(proyectTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addingNumbersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(formingWordsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(exitButton)
-                .addGap(45, 45, 45))
+                .addGap(65, 65, 65))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,6 +108,8 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         squareObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         squareObject.setVisible(true); 
         squareObject.setLocationRelativeTo(null);
+        squareObject.setResizable(false);
+        squareObject.setTitle("Adding Numbers Game");
     }//GEN-LAST:event_addingNumbersButtonActionPerformed
 
     private void formingWordsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formingWordsButtonActionPerformed
@@ -128,6 +119,8 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         circleObject.setSize(494, 307); 
         circleObject.setVisible(true); 
         circleObject.setLocationRelativeTo(null);
+        circleObject.setResizable(false);
+        circleObject.setTitle("Forming Words Game");
     }//GEN-LAST:event_formingWordsButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -175,6 +168,5 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
     private javax.swing.JButton exitButton;
     private javax.swing.JButton formingWordsButton;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel proyectTitle;
     // End of variables declaration//GEN-END:variables
 }
