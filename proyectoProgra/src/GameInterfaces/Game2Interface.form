@@ -116,7 +116,7 @@
               <Font name="Dialog" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="boxObject.startGame()" type="code"/>
+              <Connection code="cWord" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -162,7 +162,7 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(boxObject.getInitialScore())" type="code"/>
+              <Connection code="String.valueOf(initialScore)" type="code"/>
             </Property>
           </Properties>
         </Component>

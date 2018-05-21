@@ -14,26 +14,49 @@ public class FormingWords
     private String line;
     private int initialScore = 100;
     
+    public FormingWords(String inputWord, String changedWord, String line) {
+        this.inputWord = inputWord;
+        this.changedWord = changedWord;
+        this.line = line;
+    }
+
+    public FormingWords() {
+    }
     
     public String findingWords()
     {
+        int valorLinea = (int) (Math.random()*8)+1;
+        int contador = 0;
+        boolean sentinel = true;
+       
         String ruta = "E:\\palabras_para_el_juego.txt";
         File file = new File(ruta);
-        String line = "";
-        
-        try
+        //"E:\\palabras_para_el_juego.txt"
+        //C:\Users\DELL15\Documents\NetBeansProjects\proyecto\palabras.txt
+         try
         {
             if ( !file.exists() )
                 file.createNewFile();
             
+            String copy = "";
             FileReader fileR = new FileReader(file);
             BufferedReader buffReader = new BufferedReader(fileR);
+            while ( ( copy = buffReader.readLine() ) != null &&  sentinel)
+            {
+                if (contador == valorLinea)
+                {
+                    //Escoge el valor aleatorio.
+                    line = copy;
+                    sentinel = false;
+                }
+                contador++;
+            }
             
-            line = buffReader.readLine();
         }catch(IOException e)
         {
             e.printStackTrace();
         }
+         
         return line;
     }
 
@@ -46,12 +69,12 @@ public class FormingWords
     }
     //No es necesario que el método reciba por parámetro la palabra digitada por el usuario.
     //Hay que cambiar la manera en que se obtiene la palabra digitada por el usuario.
-    public String startGame ()
+    public String startGame (String changed)
     {
-        String copy = findingWords();
+        String copy = changed;
         changedWord = "";
         
-        //Desordena la palabra a mostrar por pantalla.
+        //Desordena la palabra con valores aleatorios y la mostrar por pantalla.
         for ( int i = copy.length(); i >= 1; i-- )
         {
             int valorAleatorio = (int)(Math.random()* i+1);
@@ -61,13 +84,15 @@ public class FormingWords
         return changedWord;
     }
     
-    public int compareWords ()
+    public boolean compareWords (String iWord)
     {
-        if ( !( inputWord.equals(line) ) )
+        inputWord = iWord;
+        boolean verificador = false;
+        if (  line.equals(inputWord)  )
         {
-            initialScore -=10;
+            verificador = true;
         }
-        return initialScore;
+        return verificador;
     }
     //Métodos get and set
     public String getInputWord() {
