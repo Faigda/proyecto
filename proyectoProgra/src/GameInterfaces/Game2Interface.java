@@ -13,7 +13,13 @@ import proyectoprogra.FormingWords;
  */
 public class Game2Interface extends javax.swing.JFrame {
 
-    FormingWords boxObject = new FormingWords();
+    private int initialScore = 100;
+    private String iWord;
+    FormingWords box = new FormingWords();
+    
+    String le = box.findingWords();
+    String cWord = box.startGame();
+    
     
     public Game2Interface() {
         initComponents();
@@ -40,7 +46,7 @@ public class Game2Interface extends javax.swing.JFrame {
         formingWords.setText("Forming Words");
 
         randomWords.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        randomWords.setText(boxObject.startGame());
+        randomWords.setText(box.startGame());
 
         toCorrectButton.setBackground(new java.awt.Color(0, 153, 153));
         toCorrectButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -64,7 +70,7 @@ public class Game2Interface extends javax.swing.JFrame {
         playerPoints.setText("Points:");
 
         playerPointsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        playerPointsNumber.setText(String.valueOf(boxObject.getInitialScore()));
+        playerPointsNumber.setText(String.valueOf(initialScore));
 
         helpButton3.setBackground(new java.awt.Color(0, 153, 153));
         helpButton3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -153,17 +159,27 @@ public class Game2Interface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void helpButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton3ActionPerformed
         
     }//GEN-LAST:event_helpButton3ActionPerformed
 
     private void solveButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButton2ActionPerformed
-        boxObject.setInputWord(String.valueOf(InputSpace));
-        boxObject.compareWords();
+        iWord = String.valueOf(InputSpace.getText().toUpperCase());
         
-        
-        
+        FormingWords boxObject = new FormingWords( iWord,  cWord,  le);
+        boxObject.setInputWord(String.valueOf(InputSpace).toUpperCase());
+        if (boxObject.compareWords(iWord))
+        {
+            playerPointsNumber.setText(String.valueOf(initialScore));
+        }
+        else
+        {
+            initialScore -= 10;
+            playerPointsNumber.setText(String.valueOf(initialScore));
+        } 
+      
+        InputSpace.setText("");
         randomWords.setText(boxObject.startGame());
         
     }//GEN-LAST:event_solveButton2ActionPerformed
@@ -173,7 +189,7 @@ public class Game2Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_endGameButton2ActionPerformed
 
     private void toCorrectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toCorrectButtonActionPerformed
-        InputSpace.setText(boxObject.getLine());
+        InputSpace.setText(box.getLine());
     }//GEN-LAST:event_toCorrectButtonActionPerformed
 
     /**
