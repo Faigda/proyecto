@@ -292,7 +292,6 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         "-In case 1 you can find the first addend hidden.\n\n"+
         "-In case 2 you can find the second hidden addend.\n\n"+
         "-In case 3 you can find the result hidden.\n\n"+
-        "-In case 3 you can find the result hidden.\n\n"+
         "-Each successful sum will allow the player to continue advancing.\n\n"+
         "-If for some reason the player wishes to redo the addition, can try it with the option Again.\n\n"+
         "-The game is won when the user manages to guess 15 sums and ends when the player decides to do it.");
