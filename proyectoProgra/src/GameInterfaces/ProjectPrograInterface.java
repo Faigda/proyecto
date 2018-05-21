@@ -30,14 +30,13 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         proyectTitle = new javax.swing.JLabel();
         addingNumbersButton = new javax.swing.JButton();
         formingWordsButton = new javax.swing.JButton();
-        helpButton1 = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
 
         proyectTitle.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        proyectTitle.setText("IF2000 Proyect");
+        proyectTitle.setText("IF2000 Project");
 
         addingNumbersButton.setBackground(new java.awt.Color(0, 153, 153));
         addingNumbersButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -50,20 +49,10 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
 
         formingWordsButton.setBackground(new java.awt.Color(0, 153, 153));
         formingWordsButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        formingWordsButton.setForeground(new java.awt.Color(0, 0, 0));
         formingWordsButton.setText("Forming Words");
         formingWordsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 formingWordsButtonActionPerformed(evt);
-            }
-        });
-
-        helpButton1.setBackground(new java.awt.Color(0, 153, 153));
-        helpButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        helpButton1.setText("Help");
-        helpButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpButton1ActionPerformed(evt);
             }
         });
 
@@ -81,21 +70,20 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(helpButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(proyectTitle)
-                .addGap(108, 108, 108))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(addingNumbersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(formingWordsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(proyectTitle)
+                        .addGap(108, 108, 108))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,11 +94,9 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addingNumbersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(formingWordsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exitButton)
-                    .addComponent(helpButton1))
-                .addGap(47, 47, 47))
+                .addGap(42, 42, 42)
+                .addComponent(exitButton)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,10 +129,6 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         circleObject.setVisible(true); 
         circleObject.setLocationRelativeTo(null);
     }//GEN-LAST:event_formingWordsButtonActionPerformed
-
-    private void helpButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_helpButton1ActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
@@ -192,7 +174,6 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
     private javax.swing.JButton addingNumbersButton;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton formingWordsButton;
-    private javax.swing.JButton helpButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel proyectTitle;
     // End of variables declaration//GEN-END:variables
