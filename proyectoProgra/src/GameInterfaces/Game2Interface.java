@@ -156,7 +156,8 @@ public class Game2Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void helpButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton3ActionPerformed
-        JOptionPane.showMessageDialog(null, "-The game Forming Words consists in ordering the letters of a word that are disordered in a random way so that the user can form the word."+"\n\n"+
+        JOptionPane.showMessageDialog(null, "ABOUT THE GAME FORMING WORDS"+"\n\n"+
+                                            "-The game Forming Words consists in ordering the letters of a word that are disordered in a random way so that the user can form the word."+"\n\n"+
                                             "-The player must write one of the letters that are in the top panel in the blank box and then press the \"solve\" option to enter the letter and see if it is correct or incorrect."+"\n\n"+
                                             "-The player will have a total score of 100, which will be reduced as the player fails to order a letter of the word."+"\n\n"+
                                             "-The condition for the user to advance is that the letter entered is correct, if it is incorrect, the user can not advance to the next and lose 10 points."+"\n\n"+
