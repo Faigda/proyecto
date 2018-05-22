@@ -18,6 +18,8 @@ public class LoginInterface extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Login");
+        setResizable(false);
+        
     }
 
     /**
