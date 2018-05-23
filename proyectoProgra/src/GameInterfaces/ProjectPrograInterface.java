@@ -104,6 +104,7 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Button to start the game by adding numbers
     private void addingNumbersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addingNumbersButtonActionPerformed
         AddingNumbersInterface squareObject = new AddingNumbersInterface();
         squareObject.setSize(404, 326);
@@ -114,6 +115,7 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         squareObject.setTitle("Adding Numbers Game");
     }//GEN-LAST:event_addingNumbersButtonActionPerformed
 
+    //Button to start the game by forming words
     private void formingWordsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formingWordsButtonActionPerformed
         Game2Interface circleObject = new Game2Interface();
         
@@ -125,6 +127,7 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         circleObject.setTitle("Forming Words Game");
     }//GEN-LAST:event_formingWordsButtonActionPerformed
 
+    //Button to exit the project
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed

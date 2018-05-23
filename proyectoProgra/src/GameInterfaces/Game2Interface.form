@@ -187,6 +187,9 @@
               <Connection code="&quot;&quot;" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InputSpaceActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

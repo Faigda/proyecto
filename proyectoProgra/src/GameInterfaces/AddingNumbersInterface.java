@@ -15,6 +15,7 @@ import proyectoprogra.AddingNumbers;
  */
 public class AddingNumbersInterface extends javax.swing.JFrame {
 
+    //Initialization of variables
     private int firstRandom = (int) (Math.random() * 8) + 1;
     private int secondRandom = (int) (Math.random() * 8) + 1;
     public int saveS = secondRandom;
@@ -131,7 +132,6 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
 
         helpButton.setBackground(new java.awt.Color(0, 153, 153));
         helpButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        helpButton.setForeground(new java.awt.Color(0, 0, 0));
         helpButton.setText("Help");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,30 +236,32 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Button to try again that deletes the number entered by the user
     private void tryAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tryAgainButtonActionPerformed
-        this.dispose();
-        AddingNumbersInterface squareObject = new AddingNumbersInterface();
-        
-        squareObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        squareObject.setVisible(true); 
-        squareObject.setLocationRelativeTo(null);
+        result.setText("");
     }//GEN-LAST:event_tryAgainButtonActionPerformed
 
+    //Button to finish game of adding numbers
     private void endGameButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endGameButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_endGameButton1ActionPerformed
 
+    //Number entered by the user
     private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
 
     }//GEN-LAST:event_resultActionPerformed
 
+    //Button to insert the answer and verify if it is correct or incorrect
     private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
+        
+        //Number of attemps
         attemptsMade++;
 
         int numberUser = Integer.parseInt(result.getText());
 
         boolean sentinel = start.comparador(saveF, saveS, attemptsMade, numberUser);
 
+        //It is verified if the answer is correct and incorrect and the determined variables are added
         if (sentinel) {
             acerted++;
             totalS++;
@@ -268,12 +270,16 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
             totalS++;
         }
         result.setText("");
+        
+        //Numbers shown in the interface
         saveF = (int) (Math.random() * 8) + 1;
         saveS = (int) (Math.random() * 8) + 1;
         outputS = saveF + saveS;
         acertedSumsNumber.setText(String.valueOf(acerted));
         totalSumsNumber.setText(String.valueOf(totalS));
         failedSumsNumber.setText(String.valueOf(failed));
+        
+        //It is verified if the attempt is even or odd to determine which sum is hidden
         if (attemptsMade % 2 == 0) {
             firstNumber.setText("*");
             secondNumber.setText(String.valueOf(saveS));
@@ -282,12 +288,16 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
             firstNumber.setText(String.valueOf(saveF));
         }
         showResult.setText(String.valueOf(outputS));
+        
+        //If the correct sums are equal to 15 the game is won
         if (acerted == 15) {
             setVisible(false);
             this.dispose();
+            JOptionPane.showMessageDialog(null, "You won!");
         }
     }//GEN-LAST:event_solveButtonActionPerformed
 
+    //Help button for Adding Numbers
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
          JOptionPane.showMessageDialog(null,"ABOUT THE GAME ADDING NUMBERS\n\n"+
         "-The game Adding Numbers tries to test the player's mathematical abilities.\n\n"+
