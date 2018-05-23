@@ -16,9 +16,16 @@ import proyectoprogra.AddingNumbers;
 public class AddingNumbersInterface extends javax.swing.JFrame {
 
     private int firstRandom = (int) (Math.random() * 8) + 1;
-    private int secondRandom = (int) (Math.random() * 8) + 1; 
+    private int secondRandom = (int) (Math.random() * 8) + 1;
+    public int saveS = secondRandom;
+    public int saveF = firstRandom;
     private int outPutSum = firstRandom + secondRandom;
-    private int incoming;
+    public int outputS = outPutSum;
+    private int attemptsMade = 0;
+    public int acerted = 0;
+    public int failed = 0;
+    public int totalS = 0;
+    public int save = 0;
     
     AddingNumbers start = new AddingNumbers(0, 0, 0, firstRandom, secondRandom, outPutSum);
     
@@ -36,7 +43,6 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        addingNumbers = new javax.swing.JLabel();
         tryAgainButton = new javax.swing.JButton();
         firstNumber = new javax.swing.JLabel();
         sign = new javax.swing.JLabel();
@@ -46,17 +52,15 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         acertedSums = new javax.swing.JLabel();
         failedSums = new javax.swing.JLabel();
         totalSums = new javax.swing.JLabel();
-        helpButton2 = new javax.swing.JButton();
         solveButton = new javax.swing.JButton();
         endGameButton1 = new javax.swing.JButton();
         acertedSumsNumber = new javax.swing.JLabel();
         failedSumsNumber = new javax.swing.JLabel();
         totalSumsNumber = new javax.swing.JLabel();
+        showResult = new javax.swing.JLabel();
+        helpButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        addingNumbers.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        addingNumbers.setText("Adding Numbers");
 
         tryAgainButton.setBackground(new java.awt.Color(0, 153, 153));
         tryAgainButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -68,7 +72,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         });
 
         firstNumber.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        firstNumber.setText(String.valueOf(firstRandom));
+        firstNumber.setText("*");
 
         sign.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sign.setText("+");
@@ -94,15 +98,6 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
 
         totalSums.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         totalSums.setText("Total of sums made");
-
-        helpButton2.setBackground(new java.awt.Color(0, 153, 153));
-        helpButton2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        helpButton2.setText("Help");
-        helpButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpButton2ActionPerformed(evt);
-            }
-        });
 
         solveButton.setBackground(new java.awt.Color(0, 153, 153));
         solveButton.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -131,6 +126,17 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         totalSumsNumber.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         totalSumsNumber.setText(String.valueOf(start.getTotalSums()));
 
+        showResult.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        showResult.setText(String.valueOf(outPutSum));
+
+        helpButton.setBackground(new java.awt.Color(0, 51, 55));
+        helpButton.setText("Help");
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -138,86 +144,84 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(25, 25, 25)
+                        .addComponent(acertedSums)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(acertedSumsNumber)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(failedSums)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
                         .addComponent(firstNumber)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sign)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(secondNumber)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sign2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(acertedSums)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(acertedSumsNumber)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tryAgainButton)
-                            .addComponent(solveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(67, 67, 67))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(failedSums)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(failedSumsNumber)
-                        .addContainerGap())))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(helpButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(endGameButton1)
-                .addGap(52, 52, 52))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(sign2)
+                        .addGap(18, 18, 18)
+                        .addComponent(showResult)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(addingNumbers))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(solveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tryAgainButton)))
+                    .addComponent(failedSumsNumber))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
+                        .addComponent(helpButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(endGameButton1)
+                        .addGap(93, 93, 93))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(totalSums)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalSumsNumber)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(totalSumsNumber)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(addingNumbers)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(firstNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sign)
                             .addComponent(secondNumber)
                             .addComponent(sign2)
-                            .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(showResult, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(acertedSums)
+                            .addComponent(acertedSumsNumber)
+                            .addComponent(failedSums)
+                            .addComponent(failedSumsNumber)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addComponent(tryAgainButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(solveButton)
-                        .addGap(32, 32, 32)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(solveButton)
+                            .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(totalSumsNumber)
+                    .addComponent(totalSums))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(acertedSums)
-                    .addComponent(acertedSumsNumber)
-                    .addComponent(failedSums)
-                    .addComponent(failedSumsNumber))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalSums)
-                    .addComponent(totalSumsNumber))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(helpButton2)
-                    .addComponent(endGameButton1))
-                .addGap(31, 31, 31))
+                    .addComponent(endGameButton1)
+                    .addComponent(helpButton))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -248,43 +252,46 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_endGameButton1ActionPerformed
 
     private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
-        incoming = Integer.parseInt(result.getText());
+
     }//GEN-LAST:event_resultActionPerformed
 
     private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
-        incoming = Integer.parseInt(result.getText());
-        start.setIngresedNumber(incoming);
-        
-        if (start.calculateSum())
-        {
-            start.addCorrectSums(1);
-            start.addTotalSums(1);
+        attemptsMade++;
+
+        int numberUser = Integer.parseInt(result.getText());
+
+        boolean sentinel = start.comparador(saveF, saveS, attemptsMade, numberUser);
+
+        if (sentinel) {
+            acerted++;
+            totalS++;
+        } else {
+            failed++;
+            totalS++;
         }
-        else
-        {
-            start.addFailedSums(1);
-            start.addTotalSums(1);
-        }
-        
-        firstRandom = (int) (Math.random() * 9) + 1;
-        secondRandom = (int) (Math.random() * 9) + 1;
-    
-        outPutSum = firstRandom + secondRandom;
-        start.setOutPutSum(outPutSum);
-        
-        firstNumber.setText(String.valueOf(firstRandom));
-        secondNumber.setText(String.valueOf(secondRandom));
-        
-        acertedSumsNumber.setText(String.valueOf(start.getCorrectSums()));
-        failedSumsNumber.setText(String.valueOf(start.getFailedSums()));
-        
-        totalSumsNumber.setText(String.valueOf(start.getTotalSums()));
-        
         result.setText("");
+        saveF = (int) (Math.random() * 8) + 1;
+        saveS = (int) (Math.random() * 8) + 1;
+        outputS = saveF + saveS;
+        acertedSumsNumber.setText(String.valueOf(acerted));
+        totalSumsNumber.setText(String.valueOf(totalS));
+        failedSumsNumber.setText(String.valueOf(failed));
+        if (attemptsMade % 2 == 0) {
+            firstNumber.setText("*");
+            secondNumber.setText(String.valueOf(saveS));
+        } else {
+            secondNumber.setText("*");
+            firstNumber.setText(String.valueOf(saveF));
+        }
+        showResult.setText(String.valueOf(outputS));
+        if (acerted == 15) {
+            setVisible(false);
+            this.dispose();
+        }
     }//GEN-LAST:event_solveButtonActionPerformed
 
-    private void helpButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton2ActionPerformed
-        JOptionPane.showMessageDialog(null,"ABOUT THE GAME ADDING NUMBERS\n\n"+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+         JOptionPane.showMessageDialog(null,"ABOUT THE GAME ADDING NUMBERS\n\n"+
         "-The game Adding Numbers tries to test the player's mathematical abilities.\n\n"+
         "-The game consists of solving sums, in which it is possible that no one of the 2 addends or the result will be shown on screen,\n"
         +"  this in order that the player is able to find the missing number and in this way find the solution to the problem.\n\n"+
@@ -295,8 +302,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
         "-Each successful sum will allow the player to continue advancing.\n\n"+
         "-If for some reason the player wishes to redo the addition, can try it with the option Again.\n\n"+
         "-The game is won when the user manages to guess 15 sums and ends when the player decides to do it.");
-
-    }//GEN-LAST:event_helpButton2ActionPerformed
+    }//GEN-LAST:event_helpButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,6 +330,7 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AddingNumbersInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -336,15 +343,15 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel acertedSums;
     private javax.swing.JLabel acertedSumsNumber;
-    private javax.swing.JLabel addingNumbers;
     private javax.swing.JButton endGameButton1;
     private javax.swing.JLabel failedSums;
     private javax.swing.JLabel failedSumsNumber;
     private javax.swing.JLabel firstNumber;
-    private javax.swing.JButton helpButton2;
+    private javax.swing.JButton helpButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField result;
     private javax.swing.JLabel secondNumber;
+    private javax.swing.JLabel showResult;
     private javax.swing.JLabel sign;
     private javax.swing.JLabel sign2;
     private javax.swing.JButton solveButton;

@@ -6,8 +6,7 @@
 package GameInterfaces;
 
 import javax.swing.JFrame;
-import GameInterfaces.ProjectPrograInterface;
-
+import proyectoprogra.GameLog;
 
 /**
  *
@@ -18,6 +17,7 @@ public class LoginInterface extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    GameLog game = new GameLog();
     public LoginInterface() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -94,6 +94,9 @@ public class LoginInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        String name = userName.getText();
+        GameLog gamer = new GameLog(name);
+        game.insertedGamer(gamer);
         ProjectPrograInterface secondObject = new ProjectPrograInterface(); // crea objeto ProyectPrograInterface
         
         secondObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -128,6 +131,10 @@ public class LoginInterface extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

@@ -46,6 +46,34 @@ public class AddingNumbers
             return output;
     }//Fin metodo calculateSum    
 
+     public boolean comparador (int saveF, int saveS, int attemptsMade, int numberIngresed)
+    {
+        boolean salida;
+        
+        if(attemptsMade % 2 == 0)
+           {
+                if(saveS == numberIngresed)
+                {
+                    salida = true;
+                }
+                else
+                {
+                    salida = false;
+                }
+           }
+           else
+           {
+                if(saveF == numberIngresed)
+                {
+                    salida = true;
+                }
+                else
+                {
+                    salida = false;
+                } 
+            }
+        return salida;
+    }
     public void addFailedSums( int parameter )
     {
         this.failedSums += parameter;
