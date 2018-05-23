@@ -12,29 +12,28 @@ import java.util.stream.Stream;
 
 public class FormingWords
 {
-    private String inputWord;
+    private String inputWord;//The variables are declared
     private String changedWord;
     private String line;
 
     public FormingWords(String inputWord, String changedWord, String line) {
-        this.inputWord = inputWord;
+        this.inputWord = inputWord;//A builder is created
         this.changedWord = changedWord;
         this.line = line;
     }
 
     public FormingWords() {
+        //Empty builder
     }
 
     
-    
-    
     public String findingWords()
     {
-        int valorLinea = (int) (Math.random()*19)+1;
-        int contador = 0;
+        int valueLine = (int) (Math.random()*19)+1;//Generates a random number between 1 and 20
+        int accountant = 0;
         boolean sentinel = true;
        
-        String ruta = "palabras_para_el_juego.txt";
+        String ruta = "WordsGame.txt";//Route of the list that contains the words for the "Forming Words" game
         File file = new File(ruta);
         
          try
@@ -47,13 +46,13 @@ public class FormingWords
             BufferedReader buffReader = new BufferedReader(fileR);
             while ( ( copy = buffReader.readLine() ) != null &&  sentinel)
             {
-                if (contador == valorLinea)
+                if (accountant == valueLine)
                 {
-                    //Escoge el valor aleatorio.
+                    //Choose the random value
                     line = copy;
                     sentinel = false;
                 }
-                contador++;
+                accountant++;
             }
             
         }catch(IOException e)
@@ -64,19 +63,18 @@ public class FormingWords
         return line;
     }
 
-    //No es necesario que el método reciba por parámetro la palabra digitada por el usuario.
-    //Hay que cambiar la manera en que se obtiene la palabra digitada por el usuario.
+    //It is not necessary for the method to receive the word typed by the user by parameter
     public String startGame (String changed)
     {
         String copy = changed;
         changedWord = "";
         
-        //Desordena la palabra a mostrar por pantalla.
+        //This for disorders the word to be displayed on the screen.
         for ( int i = copy.length(); i >= 1; i-- )
         {
-            int valorAleatorio = (int)(Math.random()* i+1);
-            changedWord = changedWord + copy.substring( valorAleatorio - 1, valorAleatorio );
-            copy =  copy.substring( 0, valorAleatorio -1 ) + copy.substring( valorAleatorio, i );
+            int randomValue = (int)(Math.random()* i+1);
+            changedWord = changedWord + copy.substring( randomValue - 1, randomValue );
+            copy =  copy.substring( 0, randomValue -1 ) + copy.substring( randomValue, i );
         }
         return changedWord;
     }
@@ -84,15 +82,15 @@ public class FormingWords
     public boolean compareWords (String iWord)
     {
         inputWord = iWord;
-        boolean verificador = false;
+        boolean checker = false;
         if (  line.equals(inputWord)  )
         {
-            verificador = true;
+            checker = true;
         }
-        return verificador;
+        return checker;
         
     }
-    //Métodos get and set
+    //Methods get and set
     public String getInputWord() {
         return inputWord;
     }

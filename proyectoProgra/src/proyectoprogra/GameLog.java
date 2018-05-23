@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /*
  * @author Koriel
@@ -19,17 +20,18 @@ public class GameLog {
     }
 
     public GameLog() {
+        //An empty constructor is created
     }
     
 
     public void insertedGamer(GameLog gamer) {
-        String ruta = "PlayerNames.txt";
+        String ruta = "PlayerNames.txt";//Route of the list that contains the names of the players
         File file = new File(ruta);
 
         FileWriter flWriter = null;
         try {
             if (!file.exists()) {
-                file.createNewFile();
+                file.createNewFile();//If the file does not exist then it creates it 
             }
 
             flWriter = new FileWriter(file.getAbsoluteFile(), true);
@@ -46,6 +48,7 @@ public class GameLog {
             brWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"404 error: Logic no found");
         } finally {
             if (flWriter != null) {
                 try {
@@ -60,7 +63,7 @@ public class GameLog {
 
     public boolean findGamer (String nombre){
     
-        String ruta = "gameLog";
+        String ruta = "PlayerNames.txt";
         File file = new File(ruta);       
         boolean encontrado = false;
         

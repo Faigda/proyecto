@@ -7,6 +7,7 @@ import GameInterfaces.AddingNumbersInterface;
  */
 public class AddingNumbers
 {
+    //The variables are declared
     protected int correctSums;
     protected int totalSums;
     protected int failedSums;
@@ -32,11 +33,11 @@ public class AddingNumbers
         this.outPutSum = outPutSum;
     }
     
-    //Método de la suma de los números aleatorios.
+    //Method of the sum of the random numbers
     public boolean calculateSum()
     {
         boolean output = false;
-            //Suma de de los números aleatorios.
+            //Sum of random numbers
             int outputSum = getOutPutSum() ;
             
             if (ingresedNumber == outputSum) 
@@ -44,35 +45,35 @@ public class AddingNumbers
                 output = true;
             } 
             return output;
-    }//Fin metodo calculateSum    
+    }//End method calculateSum    
 
      public boolean comparador (int saveF, int saveS, int attemptsMade, int numberIngresed)
     {
-        boolean salida;
+        boolean output;
         
         if(attemptsMade % 2 == 0)
            {
                 if(saveS == numberIngresed)
                 {
-                    salida = true;
+                    output = true;
                 }
                 else
                 {
-                    salida = false;
+                    output = false;
                 }
            }
            else
            {
                 if(saveF == numberIngresed)
                 {
-                    salida = true;
+                    output = true;
                 }
                 else
                 {
-                    salida = false;
+                    output = false;
                 } 
             }
-        return salida;
+        return output;
     }
     public void addFailedSums( int parameter )
     {
@@ -90,16 +91,16 @@ public class AddingNumbers
     }
     public int getRandomNumber()
     {
-        return (int) (Math.random() * 8) + 1;//Determina numeros al azar.
+        return (int) (Math.random() * 8) + 1;//Determine random numbers
     }
 
-    //Se obtiene el primer número.
+    //The first number is obtained
     public int addingTheFirstNumber()
     {
         return getRandomNumber();
     }
 
-    //Se obtiene el segundo número.
+    //The first number is obtained
     public int addingTheSecondNumber() 
     {
         return getRandomNumber();
@@ -132,4 +133,4 @@ public class AddingNumbers
     public void setIngresedNumber(int ingresedNumber) {
         this.ingresedNumber = ingresedNumber;
     }
-}//Fin metodo principal
+}//End main method
