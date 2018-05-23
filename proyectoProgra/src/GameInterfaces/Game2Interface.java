@@ -9,6 +9,7 @@ import proyectoprogra.FormingWords;
  */
 public class Game2Interface extends javax.swing.JFrame {
 
+    //Initialization of variables
     private int initialScore = 100;
     private String iWord;
     FormingWords box = new FormingWords();
@@ -83,6 +84,11 @@ public class Game2Interface extends javax.swing.JFrame {
 
         InputSpace.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         InputSpace.setText("");
+        InputSpace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InputSpaceActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,6 +151,7 @@ public class Game2Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Help button for forming words
     private void helpButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "ABOUT THE GAME FORMING WORDS"+"\n\n"+
                                             "-The game Forming Words consists in ordering the letters of a word that are disordered in a random way so that the user can form the word."+"\n\n"+
@@ -155,13 +162,17 @@ public class Game2Interface extends javax.swing.JFrame {
                                             "-The player wins when he hits the word, loses if his score reaches 0 and the game is over when the player decides to do it.");
     }//GEN-LAST:event_helpButton3ActionPerformed
 
+    //Button to insert the answer and verify if it is correct or incorrect
     private void solveButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButton2ActionPerformed
         //Guarda el valor ingresado por el jugador.
         iWord = String.valueOf(InputSpace.getText().toUpperCase());
         
         FormingWords boxObject = new FormingWords( iWord,  cWord,  le);
         
+        //Transforms all words entered by the user into uppercase
         boxObject.setInputWord(String.valueOf(InputSpace).toUpperCase());
+        
+        //Compare the words and check if the answer is correct or not to determine the player's score
         if (boxObject.compareWords(iWord))
         {
             playerPointsNumber.setText(String.valueOf(initialScore));
@@ -170,29 +181,39 @@ public class Game2Interface extends javax.swing.JFrame {
         {
             initialScore -= 10;
             playerPointsNumber.setText(String.valueOf(initialScore));
+            //When the score reaches 0 the game ends
             if(initialScore==0)
             {
                 this.dispose();
-                JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                JOptionPane.showMessageDialog(null, "You lose!");
             }
         } 
       
+        //The entire contents of the box where the word is entered are deleted
         InputSpace.setText("");
         
+        //Another word is chosen to play
         le = boxObject.findingWords();
         
         cWord = box.startGame(le);
     
         randomWords.setText(cWord);
     }//GEN-LAST:event_solveButton2ActionPerformed
-
+    
+    //Button to finish game of adding numbers
     private void endGameButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endGameButton2ActionPerformed
         this.dispose();
     }//GEN-LAST:event_endGameButton2ActionPerformed
 
+    //Button to try again that deletes the letters entered by the user
     private void toCorrectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toCorrectButtonActionPerformed
-        
+        InputSpace.setText("");
     }//GEN-LAST:event_toCorrectButtonActionPerformed
+
+    //Space for the user to enter the word
+    private void InputSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputSpaceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InputSpaceActionPerformed
 
     /**
      * @param args the command line arguments
