@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /*
- * @author Koriel
+ * @author Jasson, Edwin, Yeiner
  */
 public class GameLog {
 

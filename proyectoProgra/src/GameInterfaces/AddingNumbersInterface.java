@@ -11,7 +11,7 @@ import proyectoprogra.AddingNumbers;
 
 /**
  *
- * @author yeine
+ * @author Yeiner, Edwin, Jasson
  */
 public class AddingNumbersInterface extends javax.swing.JFrame {
 
