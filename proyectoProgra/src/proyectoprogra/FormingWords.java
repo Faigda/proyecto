@@ -25,11 +25,11 @@ public class FormingWords
     
     public String findingWords()
     {
-        int valorLinea = (int) (Math.random()*8)+1;
+        int valorLinea = (int) (Math.random()*69)+1;
         int contador = 0;
         boolean sentinel = true;
        
-        String ruta = "E:\\palabras_para_el_juego.txt";
+        String ruta = "palabras_para_el_juego.txt";
         File file = new File(ruta);
         //"E:\\palabras_para_el_juego.txt"
         //C:\Users\DELL15\Documents\NetBeansProjects\proyecto\palabras.txt

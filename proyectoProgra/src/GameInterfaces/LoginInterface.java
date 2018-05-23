@@ -5,6 +5,10 @@
  */
 package GameInterfaces;
 
+import javax.swing.JFrame;
+import GameInterfaces.ProjectPrograInterface;
+
+
 /**
  *
  * @author yeine
@@ -47,6 +51,11 @@ public class LoginInterface extends javax.swing.JFrame {
 
         enterButton.setBackground(new java.awt.Color(0, 153, 153));
         enterButton.setText("Enter");
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,6 +92,16 @@ public class LoginInterface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        ProjectPrograInterface secondObject = new ProjectPrograInterface(); // crea objeto ProyectPrograInterface
+        
+        secondObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        secondObject.setSize(404, 326); // establece el tamaño del marco
+        secondObject.setVisible(true); // muestra el marco
+        secondObject.setLocationRelativeTo(null);  //Hace que la ventana aparezca en el centro.
+        this.dispose();
+    }//GEN-LAST:event_enterButtonActionPerformed
 
     /**
      * @param args the command line arguments
