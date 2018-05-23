@@ -5,6 +5,9 @@
  */
 package GameInterfaces;
 
+import javax.swing.JFrame;
+import proyectoprogra.GameLog;
+
 /**
  *
  * @author yeine
@@ -14,6 +17,7 @@ public class LoginInterface extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    GameLog game = new GameLog();
     public LoginInterface() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -47,6 +51,11 @@ public class LoginInterface extends javax.swing.JFrame {
 
         enterButton.setBackground(new java.awt.Color(0, 153, 153));
         enterButton.setText("Enter");
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,6 +93,19 @@ public class LoginInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        String name = userName.getText();
+        GameLog gamer = new GameLog(name);
+        game.insertedGamer(gamer);
+        ProjectPrograInterface secondObject = new ProjectPrograInterface(); // crea objeto ProyectPrograInterface
+        
+        secondObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        secondObject.setSize(404, 326); // establece el tamaño del marco
+        secondObject.setVisible(true); // muestra el marco
+        secondObject.setLocationRelativeTo(null);  //Hace que la ventana aparezca en el centro.
+        this.dispose();
+    }//GEN-LAST:event_enterButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -109,6 +131,10 @@ public class LoginInterface extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

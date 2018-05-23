@@ -15,6 +15,8 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
      */
     public ProjectPrograInterface() {
         initComponents();
+        setTitle("Main Menu");
+        setResizable(false);
     }
 
     /**
@@ -152,6 +154,8 @@ public class ProjectPrograInterface extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ProjectPrograInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

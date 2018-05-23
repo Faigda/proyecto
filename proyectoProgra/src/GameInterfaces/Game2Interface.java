@@ -150,7 +150,7 @@ public class Game2Interface extends javax.swing.JFrame {
                                             "-The game Forming Words consists in ordering the letters of a word that are disordered in a random way so that the user can form the word."+"\n\n"+
                                             "-The player must write one of the letters that are in the top panel in the blank box and then press the \"solve\" option to enter the letter and see if it is correct or incorrect."+"\n\n"+
                                             "-The player will have a total score of 100, which will be reduced as the player fails to order a letter of the word."+"\n\n"+
-                                            "-The condition for the user to advance is that the letter entered is correct, if it is incorrect, the user can not advance to the next and lose 10 points."+"\n\n"+
+                                            "-The condition for the user to advance is that the word entered is correct, if it is incorrect, the user can not advance to the next and lose 10 points."+"\n\n"+
                                             "-If the player wants to know what the word was in an orderly manner, he can click on the \"To correct\" option that shows the word"+"\n\n"+
                                             "-The player wins when he hits the word, loses if his score reaches 0 and the game is over when the player decides to do it.");
     }//GEN-LAST:event_helpButton3ActionPerformed
@@ -219,6 +219,7 @@ public class Game2Interface extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Game2Interface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

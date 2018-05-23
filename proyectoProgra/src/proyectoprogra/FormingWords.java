@@ -34,7 +34,7 @@ public class FormingWords
         int contador = 0;
         boolean sentinel = true;
        
-        String ruta = "E:\\palabras_para_el_juego.txt";
+        String ruta = "palabras_para_el_juego.txt";
         File file = new File(ruta);
         
          try
