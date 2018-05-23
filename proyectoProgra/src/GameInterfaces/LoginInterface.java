@@ -17,6 +17,8 @@ public class LoginInterface extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    //Window properties
     GameLog game = new GameLog();
     public LoginInterface() {
         initComponents();
@@ -93,6 +95,7 @@ public class LoginInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Button to enter the user and open the main interface
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         String name = userName.getText();
         GameLog gamer = new GameLog(name);
