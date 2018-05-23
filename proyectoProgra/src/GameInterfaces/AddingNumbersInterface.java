@@ -301,12 +301,11 @@ public class AddingNumbersInterface extends javax.swing.JFrame {
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
          JOptionPane.showMessageDialog(null,"ABOUT THE GAME ADDING NUMBERS\n\n"+
         "-The game Adding Numbers tries to test the player's mathematical abilities.\n\n"+
-        "-The game consists of solving sums, in which it is possible that no one of the 2 addends or the result will be shown on screen,\n"
+        "-The game consists of solving sums, in which it is possible that no one of the 2 addends will be shown on screen,\n"
         +"  this in order that the player is able to find the missing number and in this way find the solution to the problem.\n\n"+
         "-The purpose of the game is for the player to enter in a table the number that he believes is the correct one to be able to solve the sum.\n\n"+
         "-In case 1 you can find the first addend hidden.\n\n"+
         "-In case 2 you can find the second hidden addend.\n\n"+
-        "-In case 3 you can find the result hidden.\n\n"+
         "-Each successful sum will allow the player to continue advancing.\n\n"+
         "-If for some reason the player wishes to redo the addition, can try it with the option Again.\n\n"+
         "-The game is won when the user manages to guess 15 sums and ends when the player decides to do it.");
