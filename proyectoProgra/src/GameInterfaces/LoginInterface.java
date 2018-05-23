@@ -10,7 +10,7 @@ import proyectoprogra.GameLog;
 
 /**
  *
- * @author yeine
+ * @author Yeiner, Edwin, Jasson
  */
 public class LoginInterface extends javax.swing.JFrame {
 
