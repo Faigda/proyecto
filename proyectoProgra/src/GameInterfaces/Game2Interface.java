@@ -155,11 +155,11 @@ public class Game2Interface extends javax.swing.JFrame {
     private void helpButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "ABOUT THE GAME FORMING WORDS"+"\n\n"+
                                             "-The game Forming Words consists in ordering the letters of a word that are disordered in a random way so that the user can form the word."+"\n\n"+
-                                            "-The player must write one of the letters that are in the top panel in the blank box and then press the \"solve\" option to enter the letter and see if it is correct or incorrect."+"\n\n"+
-                                            "-The player will have a total score of 100, which will be reduced as the player fails to order a letter of the word."+"\n\n"+
-                                            "-The condition for the user to advance is that the word entered is correct, if it is incorrect, the user can not advance to the next and lose 10 points."+"\n\n"+
-                                            "-If the player wants to know what the word was in an orderly manner, he can click on the \"To correct\" option that shows the word"+"\n\n"+
-                                            "-The player wins when he hits the word, loses if his score reaches 0 and the game is over when the player decides to do it.");
+                                            "-The word must be ingresed in the empty box and then press the \"solve\" option to see if the word is correct or incorrect."+"\n\n"+
+                                            "-The player will have a total score of 100, which will be reduced as the player fails to order the word."+"\n\n"+
+                                            "-The number of points that are reduced by missing a word equals 10."+"\n\n"+
+                                            "-If the player makes a mistake when writing the word, he can clean the box by clicking on the opcion \"To correct\" so that the player can write the word again."+"\n\n"+
+                                            "-The player wins if he guesses the word, loses if his score reaches 0 and the game is over when the player decides to do it.");
     }//GEN-LAST:event_helpButton3ActionPerformed
 
     //Button to insert the answer and verify if it is correct or incorrect
